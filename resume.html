@@ -7,15 +7,34 @@
 
 <style>
 
+:root{
+    --bg:#f4f6f9;
+    --text:#333;
+    --card:#ffffff;
+    --header:#2c3e50;
+    --nav:#34495e;
+    --accent:#3498db;
+}
+
+body.dark{
+    --bg:#1e1e1e;
+    --text:#f0f0f0;
+    --card:#2c2c2c;
+    --header:#111;
+    --nav:#222;
+    --accent:#4aa3ff;
+}
+
 body{
     margin:0;
     font-family:Arial, Helvetica, sans-serif;
-    background:#f4f6f9;
-    color:#333;
+    background:var(--bg);
+    color:var(--text);
+    transition:0.3s;
 }
 
 header{
-    background:#2c3e50;
+    background:var(--header);
     color:white;
     padding:40px 20px;
     text-align:center;
@@ -26,14 +45,11 @@ header h1{
     font-size:36px;
 }
 
-header p{
-    margin-top:10px;
-}
-
 nav{
-    background:#34495e;
+    background:var(--nav);
     display:flex;
     justify-content:center;
+    flex-wrap:wrap;
 }
 
 nav a{
@@ -43,7 +59,19 @@ nav a{
 }
 
 nav a:hover{
-    background:#2c3e50;
+    background:#00000030;
+}
+
+.toggle-btn{
+    position:fixed;
+    right:20px;
+    top:20px;
+    padding:10px 15px;
+    border:none;
+    background:var(--accent);
+    color:white;
+    border-radius:6px;
+    cursor:pointer;
 }
 
 .container{
@@ -54,20 +82,20 @@ nav a:hover{
 }
 
 section{
-    background:white;
+    background:var(--card);
     margin-bottom:20px;
     padding:25px;
     border-radius:8px;
-    box-shadow:0 2px 6px rgba(0,0,0,0.1);
+    box-shadow:0 3px 10px rgba(0,0,0,0.1);
 }
 
 h2{
-    border-left:5px solid #3498db;
+    border-left:5px solid var(--accent);
     padding-left:10px;
 }
 
 .skill{
-    margin-bottom:10px;
+    margin-bottom:12px;
 }
 
 .skill-bar{
@@ -75,14 +103,19 @@ h2{
     border-radius:20px;
 }
 
+body.dark .skill-bar{
+    background:#444;
+}
+
 .skill-level{
     height:12px;
-    background:#3498db;
+    background:var(--accent);
     border-radius:20px;
 }
 
-button{
-    background:#3498db;
+button.action{
+    margin-top:10px;
+    background:var(--accent);
     border:none;
     padding:10px 18px;
     color:white;
@@ -90,14 +123,10 @@ button{
     cursor:pointer;
 }
 
-button:hover{
-    background:#2980b9;
-}
-
 footer{
     text-align:center;
     padding:20px;
-    background:#2c3e50;
+    background:var(--header);
     color:white;
 }
 
@@ -106,10 +135,13 @@ footer{
 
 <body>
 
+<button class="toggle-btn" onclick="toggleDarkMode()">🌙 深色模式</button>
+
 <header>
 <h1>你的名字</h1>
-<p>亞洲大學學生 | 學號: AU114018025</p>
-<p>Email: yourmail@email.com</p>
+<p>亞洲大學學生</p>
+<p>學號：AU114018025</p>
+<p>Email：yourmail@email.com</p>
 </header>
 
 <nav>
@@ -125,15 +157,16 @@ footer{
 <section id="about">
 <h2>關於我</h2>
 <p>
-我是亞洲大學的學生，對於資訊科技、程式設計與網頁開發有興趣。
-目前正在學習 HTML、CSS、JavaScript，希望未來能成為軟體工程師。
+我是亞洲大學的學生，目前學習程式設計與網頁開發。
+對 HTML、CSS、JavaScript 以及軟體開發有興趣，
+希望未來能成為一名優秀的軟體工程師。
 </p>
 </section>
 
 <section id="education">
 <h2>學歷</h2>
 <ul>
-<li>亞洲大學 - 資訊相關科系 (就讀中)</li>
+<li>亞洲大學 - 資訊相關科系（就讀中）</li>
 <li>高中：自行填寫</li>
 </ul>
 </section>
@@ -169,11 +202,11 @@ JavaScript
 
 <ul>
 <li>個人履歷網站</li>
-<li>簡單待辦事項網頁</li>
+<li>簡單待辦事項系統</li>
 <li>課堂專題</li>
 </ul>
 
-<button onclick="showMessage()">查看我的目標</button>
+<button class="action" onclick="showGoal()">查看我的目標</button>
 
 <p id="goal"></p>
 
@@ -182,9 +215,9 @@ JavaScript
 <section id="contact">
 <h2>聯絡方式</h2>
 
-<p>Email: yourmail@email.com</p>
-<p>GitHub: github.com/yourname</p>
-<p>電話: 09xxxxxxxx</p>
+<p>Email：yourmail@email.com</p>
+<p>GitHub：github.com/yourname</p>
+<p>電話：09xxxxxxxx</p>
 
 </section>
 
@@ -196,9 +229,13 @@ JavaScript
 
 <script>
 
-function showMessage(){
+function toggleDarkMode(){
+    document.body.classList.toggle("dark")
+}
+
+function showGoal(){
     document.getElementById("goal").innerText =
-    "我的目標是成為一名優秀的軟體工程師，持續學習新技術並開發實用的系統。";
+    "我的目標是持續精進程式設計能力，未來成為專業的軟體工程師。"
 }
 
 </script>

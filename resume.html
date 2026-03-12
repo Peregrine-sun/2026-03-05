@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>個人履歷 - AU114018025</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f4f6f9;
+    color:#333;
+}
+
+header{
+    background:#2c3e50;
+    color:white;
+    padding:40px 20px;
+    text-align:center;
+}
+
+header h1{
+    margin:0;
+    font-size:36px;
+}
+
+header p{
+    margin-top:10px;
+}
+
+nav{
+    background:#34495e;
+    display:flex;
+    justify-content:center;
+}
+
+nav a{
+    color:white;
+    padding:15px 20px;
+    text-decoration:none;
+}
+
+nav a:hover{
+    background:#2c3e50;
+}
+
+.container{
+    width:90%;
+    max-width:1000px;
+    margin:auto;
+    padding:20px;
+}
+
+section{
+    background:white;
+    margin-bottom:20px;
+    padding:25px;
+    border-radius:8px;
+    box-shadow:0 2px 6px rgba(0,0,0,0.1);
+}
+
+h2{
+    border-left:5px solid #3498db;
+    padding-left:10px;
+}
+
+.skill{
+    margin-bottom:10px;
+}
+
+.skill-bar{
+    background:#ddd;
+    border-radius:20px;
+}
+
+.skill-level{
+    height:12px;
+    background:#3498db;
+    border-radius:20px;
+}
+
+button{
+    background:#3498db;
+    border:none;
+    padding:10px 18px;
+    color:white;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#2980b9;
+}
+
+footer{
+    text-align:center;
+    padding:20px;
+    background:#2c3e50;
+    color:white;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>你的名字</h1>
+<p>亞洲大學學生 | 學號: AU114018025</p>
+<p>Email: yourmail@email.com</p>
+</header>
+
+<nav>
+<a href="#about">關於我</a>
+<a href="#education">學歷</a>
+<a href="#skills">技能</a>
+<a href="#projects">作品</a>
+<a href="#contact">聯絡</a>
+</nav>
+
+<div class="container">
+
+<section id="about">
+<h2>關於我</h2>
+<p>
+我是亞洲大學的學生，對於資訊科技、程式設計與網頁開發有興趣。
+目前正在學習 HTML、CSS、JavaScript，希望未來能成為軟體工程師。
+</p>
+</section>
+
+<section id="education">
+<h2>學歷</h2>
+<ul>
+<li>亞洲大學 - 資訊相關科系 (就讀中)</li>
+<li>高中：自行填寫</li>
+</ul>
+</section>
+
+<section id="skills">
+<h2>技能</h2>
+
+<div class="skill">
+HTML
+<div class="skill-bar">
+<div class="skill-level" style="width:80%"></div>
+</div>
+</div>
+
+<div class="skill">
+CSS
+<div class="skill-bar">
+<div class="skill-level" style="width:70%"></div>
+</div>
+</div>
+
+<div class="skill">
+JavaScript
+<div class="skill-bar">
+<div class="skill-level" style="width:60%"></div>
+</div>
+</div>
+
+</section>
+
+<section id="projects">
+<h2>作品</h2>
+
+<ul>
+<li>個人履歷網站</li>
+<li>簡單待辦事項網頁</li>
+<li>課堂專題</li>
+</ul>
+
+<button onclick="showMessage()">查看我的目標</button>
+
+<p id="goal"></p>
+
+</section>
+
+<section id="contact">
+<h2>聯絡方式</h2>
+
+<p>Email: yourmail@email.com</p>
+<p>GitHub: github.com/yourname</p>
+<p>電話: 09xxxxxxxx</p>
+
+</section>
+
+</div>
+
+<footer>
+© 2026 亞洲大學學生 AU114018025
+</footer>
+
+<script>
+
+function showMessage(){
+    document.getElementById("goal").innerText =
+    "我的目標是成為一名優秀的軟體工程師，持續學習新技術並開發實用的系統。";
+}
+
+</script>
+
+</body>
+</html>
